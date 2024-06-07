@@ -1,10 +1,17 @@
 import React from "react";
 import classes from "./form.module.css";
 import hand from "../../waving-hand.png";
+import { useForm } from "react-hook-form";
 
-const Form = () => {
+const Form = ({ onSubmit }) => {
+  const {
+    handleSubmit,
+    formState: { errors },
+    register,
+  } = useForm();
+
   return (
-    <form className={classes.form}>
+    <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
       <div className={classes.form_header}>
         <img src={hand} alt="waving-hand" height={"30px"} width={"30px"} />
         <p className={classes.welcome}>Добро пожаловать в GAMBLER</p>
@@ -12,7 +19,10 @@ const Form = () => {
       <p className={classes.info}>Для входа в панель авторизуйтесь</p>
       <div className={classes.inpts}>
         <div>
-          <div className={classes.box}>
+          <div
+            className={classes.box}
+            style={errors.login ? { border: "1px solid #FF4E43" } : null}
+          >
             <svg
               width="18"
               height="23"
@@ -33,13 +43,18 @@ const Form = () => {
             </svg>
           </div>
           <input
+            style={errors.login ? { border: "1px solid #FF4E43" } : null}
             className={classes.inpt}
             type="text"
             placeholder="Введите логин"
+            {...register("login", { required: true })}
           />
         </div>
         <div>
-          <div className={classes.box}>
+          <div
+            className={classes.box}
+            style={errors.password ? { border: "1px solid #FF4E43" } : null}
+          >
             <svg
               width="18"
               height="18"
@@ -57,12 +72,14 @@ const Form = () => {
             </svg>
           </div>
           <input
+            style={errors.password ? { border: "1px solid #FF4E43" } : null}
             className={classes.inpt}
             type="password"
             placeholder="Введите пароль"
+            {...register("password", { required: true })}
           />
         </div>
-        <button>ВОЙТИ</button>
+        <button className={classes.login}>ВОЙТИ</button>
       </div>
     </form>
   );

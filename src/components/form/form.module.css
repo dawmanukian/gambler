@@ -1,5 +1,6 @@
 .form {
-  width: 530px;
+  max-width: 530px;
+  width: 100%;
   padding: 30px;
   padding-top: 45px;
   height: 421px;
@@ -50,6 +51,8 @@
 }
 .inpt {
   background: #0d0718;
+  max-width: 470px;
+  width: 100%;
   border: 1px solid #160f24;
   border-left: none;
   border-radius: 0px 12px 12px 0px;
@@ -68,7 +71,7 @@
   display: grid;
   grid-template-columns: 65px 1fr;
 }
-button {
+.login {
   border: 1.5px solid #ffffff1c;
   color: #e9dfff;
   font-weight: 800;
@@ -89,4 +92,9 @@ button {
   justify-content: center;
   align-items: center;
   border-radius: 12px 0px 0px 12px;
+}
+@media screen and (max-width: 780px){
+  .logo {
+    display: none;
+  }
 }

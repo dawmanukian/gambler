@@ -1,13 +1,18 @@
+import { useState } from "react";
 import "./App.css";
 import Form from "./components/form/Form";
+import Login2Fa from "./components/login-2fa/Login2Fa";
 
 function App() {
+  const [show2Fa, setShow2Fa] = useState(false);
+
   return (
     <div className="App">
+      {show2Fa && <Login2Fa onClose={() => setShow2Fa(false)} />}
       <div className="header_background">
         <svg
-        className="ellipse"
-          width="1250"
+          className="ellipse"
+          width="auto"
           height="350"
           viewBox="0 0 1250 350"
           fill="none"
@@ -43,7 +48,7 @@ function App() {
 
         <svg
           className="lines"
-          width="1200"
+          width="auto"
           height="280"
           viewBox="0 0 1200 280"
           fill="none"
@@ -53,9 +58,31 @@ function App() {
           <circle cx="600" cy="540" r="449.5" stroke="#140D1E" />
           <circle cx="600" cy="600" r="599.5" stroke="#140D1E" />
         </svg>
+        <svg className="logo_mob" width="260" height="231" viewBox="0 0 260 231" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_330_811)">
+<path d="M131.094 55.6766C130.644 54.7745 129.356 54.7745 128.906 55.6766L112.684 88.2043C112.515 88.5436 112.513 88.9423 112.678 89.2834L116.081 96.2927C116.295 96.7332 116.225 97.2588 115.904 97.6282L110.876 103.411C110.493 103.851 109.853 103.959 109.347 103.669L95.832 95.9268C95.2701 95.6049 95.0569 94.9006 95.3459 94.3211L96.658 91.6901C96.882 91.2411 96.8087 90.7009 96.4732 90.3278L82.1319 74.3774C81.3245 73.4795 79.8427 74.172 80.0136 75.3674L86.5028 120.748C86.5888 121.35 87.1044 121.797 87.7124 121.797H111.178C111.906 121.797 112.469 122.431 112.435 123.159C112.422 123.438 112.416 123.719 112.416 124.001C112.416 124.283 112.422 124.563 112.435 124.842C112.469 125.57 111.906 126.204 111.178 126.204H88.6931C87.9494 126.204 87.3781 126.863 87.4835 127.6L90.6025 149.396C90.6887 149.998 91.2042 150.445 91.8122 150.445H168.188C168.796 150.445 169.311 149.998 169.397 149.396L172.513 127.599C172.618 126.863 172.047 126.204 171.303 126.204H148.822C148.094 126.204 147.531 125.57 147.565 124.842C147.578 124.563 147.584 124.283 147.584 124.001C147.584 123.719 147.578 123.438 147.565 123.159C147.531 122.431 148.094 121.797 148.822 121.797H172.288C172.896 121.797 173.411 121.35 173.497 120.748L179.986 75.3674C180.157 74.172 178.675 73.4795 177.868 74.3774L163.527 90.3278C163.191 90.7009 163.118 91.2411 163.342 91.6901L164.654 94.3211C164.943 94.9006 164.73 95.6049 164.168 95.9268L150.654 103.669C150.148 103.959 149.507 103.85 149.124 103.41L144.186 97.7219C143.869 97.3573 143.797 96.8404 144.001 96.403L147.334 89.2772C147.492 88.9394 147.487 88.5479 147.321 88.2141L131.094 55.6766Z" fill="url(#paint0_linear_330_811)"/>
+</g>
+<defs>
+<filter id="filter0_d_330_811" x="0" y="-25" width="260" height="255.444" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="40"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_330_811"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_330_811" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_330_811" x1="129.925" y1="57.2035" x2="129.925" y2="147.863" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#ACA1F8"/>
+</linearGradient>
+</defs>
+</svg>
+
         <svg
           className="logo"
-          width="310"
+          width="auto"
           height="284"
           viewBox="0 0 310 284"
           fill="none"
@@ -118,7 +145,7 @@ function App() {
         </svg>
         <svg
           className="stars"
-          width="938"
+          width="auto"
           height="175"
           viewBox="0 0 938 175"
           fill="none"
@@ -347,7 +374,7 @@ function App() {
           </defs>
         </svg>
       </div>
-      <Form />
+      <Form onSubmit={() => setShow2Fa(true)} />
     </div>
   );
 }
