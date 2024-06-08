@@ -9,6 +9,8 @@
   position: relative;
   top: 280px;
   z-index: 1;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .form::before {
   content: "";
@@ -16,7 +18,11 @@
   inset: 0;
   border-radius: 24px;
   padding: 1px;
-  background: linear-gradient(180deg, rgba(229, 216, 255, 0.02) 0%, rgba(229, 216, 255, 0.05) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(229, 216, 255, 0.02) 0%,
+    rgba(229, 216, 255, 0.05) 100%
+  );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -26,6 +32,7 @@
   font-weight: 800;
   font-size: 24px;
   line-height: 29.05px;
+  text-align: center;
 }
 .form_header {
   display: flex;
@@ -43,7 +50,9 @@
 }
 .inpts {
   display: grid;
-  grid-template-columns: 470px;
+  width: 100%;
+  max-width: 470px;
+  grid-template-columns: 1fr;
   grid-template-rows: 65px 65px 65px;
   gap: 25px;
   position: absolute;
@@ -51,8 +60,6 @@
 }
 .inpt {
   background: #0d0718;
-  max-width: 470px;
-  width: 100%;
   border: 1px solid #160f24;
   border-left: none;
   border-radius: 0px 12px 12px 0px;
@@ -79,9 +86,12 @@
   border-radius: 12px;
   cursor: pointer;
   line-height: 21.78px;
-  background: 
-    linear-gradient(90deg, #6922FF 0%, #8B54FF 52.5%, #6922FF 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 80%);
+  background: linear-gradient(90deg, #6922ff 0%, #8b54ff 52.5%, #6922ff 100%),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0) 80%
+    );
 }
 .box {
   width: 65px;
@@ -93,8 +103,62 @@
   align-items: center;
   border-radius: 12px 0px 0px 12px;
 }
-@media screen and (max-width: 780px){
+.mob_text p{
+  display: none;
+}
+@media screen and (max-width: 780px) {
   .logo {
     display: none;
+  }
+}
+@media screen and (max-width: 560px) {
+  .mob_text p{
+    display: none;
+  }
+  .box {
+    height: 50px;
+    width: 50px;
+  }
+  .inpts {
+    max-width: none;
+    grid-template-rows: 50px 50px 50px;
+    gap: 10px;
+  }
+  .form {
+    padding: 0px;
+    padding-top: 25px;
+    height: 296px;
+  }
+  .inpts > div {
+    grid-template-columns: 50px 1fr;
+  }
+  .inpts > div, .inpts > button {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .welcome {
+    font-size: 20px;
+    line-height: 24.2px;
+    width: 224px;
+    height: 21px;
+  }
+  .info {
+    font-size: 12px;
+    line-height: 14.52px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+  }
+  .inpts > button {
+    font-size: 12px;
+  }
+  .form_header {
+    gap: 0px;
+  }
+  .form_header > img {
+    height: 20px;
+    width: 20px;
+  }
+  .inpt {
+    font-size: 12px;
   }
 }

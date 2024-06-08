@@ -15,6 +15,10 @@ const Form = ({ onSubmit }) => {
       <div className={classes.form_header}>
         <img src={hand} alt="waving-hand" height={"30px"} width={"30px"} />
         <p className={classes.welcome}>Добро пожаловать в GAMBLER</p>
+        <div className={classes.mob_text}>
+          <p className={classes.welcome}>Добро пожаловать</p>
+          <p className={classes.welcome}>в GAMBLER</p>
+        </div>
       </div>
       <p className={classes.info}>Для входа в панель авторизуйтесь</p>
       <div className={classes.inpts}>

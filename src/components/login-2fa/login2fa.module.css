@@ -58,11 +58,12 @@
 }
 .inpts {
   display: grid;
-  grid-template-columns: 470px;
+  grid-template-columns: 1fr;
   grid-template-rows: 65px 65px;
   gap: 25px;
   position: absolute;
   z-index: 9;
+  
 }
 .login {
   border: 1.5px solid #ffffff1c;
@@ -129,4 +130,59 @@
   opacity: 25%;
   margin-top: 25px;
   margin-bottom: 25px;
+}
+
+@media screen and (max-width: 560px) {
+  .box {
+    height: 50px;
+    width: 50px;
+  }
+  .inpts {
+    max-width: none;
+    grid-template-rows: 50px 50px 50px;
+    gap: 10px;
+  }
+  .form {
+    padding: 0px;
+    padding-top: 25px;
+    height: 234px;
+    max-width: 300px;
+  }
+  .inpts > div {
+    grid-template-columns: 50px 1fr;
+  }
+  .inpts > div, .inpts > button {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .welcome {
+    font-size: 20px;
+    line-height: 24.2px;
+    width: 224px;
+    height: 40px;
+    text-align: center;
+  }
+  .info {
+    font-size: 12px;
+    line-height: 14.52px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .inpts > button {
+    font-size: 12px;
+  }
+  .form_header > img {
+    height: 20px;
+    width: 20px;
+  }
+  .inpt {
+    font-size: 12px;
+  }
+  .close {
+    left: -10px;
+  }
+  .close_btn {
+    height: 28px;
+    width: 28px;
+  }
 }
