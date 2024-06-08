@@ -47,7 +47,7 @@ const Form = ({ onSubmit }) => {
             </svg>
           </div>
           <input
-            style={errors.login ? { border: "1px solid #FF4E43" } : null}
+            style={errors.login ? { border: "1px solid #FF4E43", borderLeft: "none" } : null}
             className={classes.inpt}
             type="text"
             placeholder="Введите логин"
@@ -76,7 +76,7 @@ const Form = ({ onSubmit }) => {
             </svg>
           </div>
           <input
-            style={errors.password ? { border: "1px solid #FF4E43" } : null}
+            style={errors.password ? { border: "1px solid #FF4E43", borderLeft: "none" } : null}
             className={classes.inpt}
             type="password"
             placeholder="Введите пароль"

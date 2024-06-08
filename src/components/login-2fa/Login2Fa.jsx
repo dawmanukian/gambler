@@ -4,21 +4,20 @@ import { useForm } from "react-hook-form";
 import locked from "../../locked-with-key.png";
 import face from "../../frowning-face-with-open-mouth.png";
 
-const Login2Fa = ({ onClose }) => {
+const Login2Fa = ({ onClose, showError }) => {
   const {
     handleSubmit,
     formState: { errors },
     register,
   } = useForm();
 
-  const onSubmit = () => setShowError(true);
-
-  const [showError, setShowError] = useState(false);
+  const onSubmit = () => {};
+  console.log(showError, 'err')
 
   return (
     <div className={classes.page}>
       {showError ? (
-        <div className={classes.form} style={{ height: "241px" }}>
+        <div className={classes.form_err}>
           <div className={classes.close}>
             <button
               className={classes.close_btn}
@@ -129,7 +128,7 @@ const Login2Fa = ({ onClose }) => {
                 </svg>
               </div>
               <input
-                style={errors.facode ? { border: "1px solid #FF4E43" } : null}
+                style={errors.facode ? { border: "1px solid #FF4E43", borderLeft: "none" } : null}
                 className={classes.inpt}
                 type="password"
                 placeholder="Введите 2FA код"

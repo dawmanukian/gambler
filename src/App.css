@@ -42,11 +42,36 @@ body {
 .logo_mob {
   display: none;
 }
+.stars_mob {
+  display: none;
+}
 @media screen and (max-width: 780px){
-  .logo_mob {
+  /* .logo_mob {
     display: block;
     position: absolute;
     top: 55px;
+  }
+  .logo {
+    display: none;
+  } */
+}
+@media screen and (max-width: 560px){
+  .logo_mob {
+    top: 0px;
+  }
+  .ellipse {
+    top: -20px;
+  }
+  .stars {
+    display: none;
+  }
+  .stars_mob {
+    display: block;
+  }
+  .logo_mob {
+    display: block;
+    position: absolute;
+    top: 0px;
   }
   .logo {
     display: none;
