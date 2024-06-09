@@ -90,4 +90,7 @@ body {
   .logo {
     display: none;
   }
+  .App {
+    align-items: center;
+  }
 }
