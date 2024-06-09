@@ -11,17 +11,6 @@ const Form = ({ onSubmit }) => {
     register,
   } = useForm();
 
-  const [isInput1Focused, setIsInput1Focused] = useState(false);
-  const [isInput2Focused, setIsInput2Focused] = useState(false);
-
-  const handleFocusChange = (inputNumber, isFocused) => {
-    if (inputNumber === 1) {
-      setIsInput1Focused(isFocused);
-    } else if (inputNumber === 2) {
-      setIsInput2Focused(isFocused);
-    }
-  };
-
   return (
     <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
       <div className={classes.form_header}>
@@ -58,22 +47,18 @@ const Form = ({ onSubmit }) => {
               />
             </svg>
           </div>
-          {console.log(isInput2Focused)}
-          {isInput1Focused}
           <input
             style={errors.login ? { border: "1px solid #FF4E43", borderLeft: "none" } : null}
             className={classes.inpt}
             type="text"
             placeholder="Введите логин"
-            onFocus={() => handleFocusChange(1, true)}
-            onBlur={() => handleFocusChange(1, false)}
             {...register("login", { required: true })}
           />
         </div>
         <div>
           <div
             className={classes.box}
-            style={errors.password ? { border: "1px solid #FF4E43", borderLeft: "none" } : isInput2Focused ? { border: "1px solid #FF4E43" } : null}
+            style={errors.password ? { border: "1px solid #FF4E43" } : null}
           >
             <svg
               width="18"
@@ -92,12 +77,10 @@ const Form = ({ onSubmit }) => {
             </svg>
           </div>
           <input
-            style={errors.password ? { border: "1px solid #FF4E43", borderLeft: "none" } : isInput2Focused ? { border: "1px solid #FF4E43", borderLeft: "none" } : null}
+            style={errors.password ? { border: "1px solid #FF4E43", borderLeft: "none" } : null}
             className={classes.inpt}
             type="password"
             placeholder="Введите пароль"
-            onFocus={() => handleFocusChange(2, true)}
-            onBlur={() => handleFocusChange(2, false)}
             {...register("password", { required: true })}
           />
         </div>
