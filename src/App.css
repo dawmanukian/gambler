@@ -105,5 +105,7 @@ body {
   }
 }
 @media screen and (max-height: 550px){
-  
+  .App {
+    align-items: center;
+  }
 }
