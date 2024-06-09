@@ -92,5 +92,12 @@ body {
   }
   .App {
     align-items: center;
+    height: auto;
+  }
+  .lines {
+    top: -39px;
+  }
+  .App {
+    overflow-y: hidden;
   }
 }
