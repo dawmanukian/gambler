@@ -91,7 +91,6 @@ body {
     display: none;
   }
   .App {
-    align-items: center;
     height: auto;
   }
   .lines {
@@ -101,4 +100,10 @@ body {
     overflow-y: hidden;
     min-height: none;
   }
+  .header_background {
+    height: 150px;
+  }
+}
+@media screen and (max-height: 550px){
+  
 }
