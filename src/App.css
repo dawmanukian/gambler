@@ -5,6 +5,20 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090314;
+  border-radius: 1000px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6922FF; 
+  border-radius: 1000px; 
+}
+
 body {
   width: 100%;
   background-color: #090314;
