@@ -14,7 +14,7 @@ function App() {
       <div className="header_background">
         <svg
           className="ellipse"
-          width="auto"
+          width="100%"
           height="350"
           viewBox="0 0 1250 350"
           fill="none"
@@ -50,7 +50,7 @@ function App() {
 
         <svg
           className="lines"
-          width="auto"
+          width="100%"
           height="280"
           viewBox="0 0 1200 280"
           fill="none"
@@ -127,7 +127,7 @@ function App() {
 
         <svg
           className="logo"
-          width="auto"
+          width="100%"
           height="284"
           viewBox="0 0 310 284"
           fill="none"
@@ -190,7 +190,7 @@ function App() {
         </svg>
         <svg
           className="stars_mob"
-          width="auto"
+          width="100%"
           height="109"
           viewBox="0 0 320 109"
           fill="none"
@@ -314,7 +314,7 @@ function App() {
 
         <svg
           className="stars"
-          width="auto"
+          width="100%"
           height="175"
           viewBox="0 0 938 175"
           fill="none"
