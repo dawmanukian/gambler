@@ -90,9 +90,6 @@ body {
   .logo {
     display: none;
   }
-  .App {
-    height: auto;
-  }
   .lines {
     top: -39px;
   }
@@ -106,9 +103,8 @@ body {
   body {
     overflow-x: hidden;
   }
-}
-@media screen and (max-height: 750px){
   .App {
-    max-height: 550px;
-  }
+    min-height:100vh;
+    overflow-y: hidden; 
+  } 
 }
