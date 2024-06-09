@@ -99,5 +99,6 @@ body {
   }
   .App {
     overflow-y: hidden;
+    min-height: none;
   }
 }
